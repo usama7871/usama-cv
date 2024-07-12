@@ -8,7 +8,7 @@
 /* Body Styling */
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('images/rectangle-neon-background.jpg') no-repeat center center fixed;
+  background: url('rectangle-neon-background.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
   line-height: 1.6;
