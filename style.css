@@ -1,0 +1,127 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('images/rectangle-neon-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  line-height: 1.6;
+  text-align: center;
+  padding-top: 100px;
+}
+
+/* Header Styling */
+header {
+  background: #333;
+  color: #fff;
+  padding: 1em 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+header h1 {
+  margin-bottom: 0.5em;
+  font-size: 2.5em;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+  color: #FFD700; /* Gold color */
+}
+
+/* Section Styling */
+section {
+  padding: 2em 5%;
+  background: rgba(0, 0, 0, 0.8);
+  margin: 2em 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section h2 {
+  border-bottom: 2px solid #FFD700; /* Gold color */
+  padding-bottom: 0.5em;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+section p, section ul {
+  text-align: left;
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+}
+
+section ul li {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0.5em 0;
+  padding: 1em;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+section ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Contact Section Styling */
+section#contact p a {
+  color: #FFD700; /* Gold color */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+section#contact p a:hover {
+  color: #ff8c00; /* Dark orange color */
+}
+
+/* Footer Styling */
+footer {
+  background: rgba(51, 73, 61, 0.7);
+  padding: 1em 0;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+}
