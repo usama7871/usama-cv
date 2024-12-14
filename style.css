@@ -1,33 +1,32 @@
-/* Basic Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body Styling */
+/* Body */
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('space-background.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background: url('space-background.jpg') center/cover no-repeat fixed;
   color: #e0e0e0;
   line-height: 1.6;
   text-align: center;
-  padding-top: 100px; /* To avoid content going behind the fixed header */
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  padding-top: 100px;
+  overflow-x: hidden;
 }
 
-/* Header Styling */
+/* Header */
 header {
   background: rgba(0, 0, 0, 0.6);
   color: #e0e0e0;
-  padding: 1em 0;
+  padding: 1rem 0;
   position: fixed;
   top: 0;
   width: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   z-index: 1000;
-  backdrop-filter: blur(10px); /* Blur effect for a futuristic look */
+  backdrop-filter: blur(10px);
 }
 
 .header-content {
@@ -35,168 +34,134 @@ header {
   align-items: center;
   justify-content: space-between;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  margin: auto;
+  padding: 0 1rem;
+  flex-wrap: wrap;
 }
 
 .profile-pic {
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  margin-right: 20px;
-  border: 4px solid #00ffff; /* Neon cyan border */
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8); /* Neon glow effect */
-  transition: transform 0.3s, box-shadow 0.3s;
+  margin-right: 1rem;
+  border: 3px solid #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  transition: 0.3s;
 }
 
 .profile-pic:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 1); /* Stronger glow on hover */
+  box-shadow: 0 0 25px rgba(0, 255, 255, 1);
 }
 
 header h1 {
-  margin-bottom: 0.5em;
-  font-size: 2.5em;
-  letter-spacing: 2px;
-  color: #ff1493; /* Neon pink color */
-  text-shadow: 0 0 10px rgba(255, 20, 147, 0.8); /* Glowing text effect */
+  font-size: 2.5rem;
+  color: #ff1493;
+  text-shadow: 0 0 10px rgba(255, 20, 147, 0.8);
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
   justify-content: center;
+  gap: 1rem;
 }
 
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
+nav a {
   color: #e0e0e0;
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   transition: color 0.3s, text-shadow 0.3s;
 }
 
-nav ul li a:hover, nav ul li a.active {
-  color: #ff1493; /* Neon pink color */
-  text-shadow: 0 0 10px rgba(255, 20, 147, 0.8); /* Glowing text effect */
+nav a:hover,
+nav a.active {
+  color: #ff1493;
+  text-shadow: 0 0 10px rgba(255, 20, 147, 0.8);
 }
 
-/* Section Styling */
+/* Sections */
 section {
-  padding: 2em 5%;
+  padding: 2rem 5%;
   background: rgba(0, 0, 0, 0.8);
-  margin: 2em 0;
+  margin: 2rem 0;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 section h2 {
-  border-bottom: 2px solid #ff1493; /* Neon pink color */
-  padding-bottom: 0.5em;
-  font-size: 2.5em;
-  color: #ff1493; /* Neon pink color */
-  text-shadow: 0 0 10px rgba(255, 20, 147, 0.8); /* Glowing text effect */
-}
-
-section p, section ul {
-  text-align: left;
+  border-bottom: 2px solid #ff1493;
+  font-size: 2rem;
+  color: #ff1493;
+  text-shadow: 0 0 10px rgba(255, 20, 147, 0.8);
+  padding-bottom: 0.5rem;
 }
 
 section ul {
   list-style: none;
-  padding: 0;
 }
 
-section ul li {
+section li {
   background: rgba(255, 255, 255, 0.1);
-  margin: 0.5em 0;
-  padding: 1em;
+  margin: 0.5rem 0;
+  padding: 1rem;
   border-radius: 10px;
-  transition: background 0.3s;
-  box-shadow: 0 4px 6px rgba(0, 255, 255, 0.3); /* Neon glow effect */
+  box-shadow: 0 4px 6px rgba(0, 255, 255, 0.3);
+  transition: 0.3s;
 }
 
-section ul li:hover {
+section li:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Contact Section Styling */
-section#contact p a {
-  color: #ff1493; /* Neon pink color */
+#contact a {
+  color: #ff1493;
   text-decoration: none;
-  transition: color 0.3s, text-shadow 0.3s;
+  transition: 0.3s;
 }
 
-section#contact p a:hover {
-  color: #ff4500; /* Neon orange color */
-  text-shadow: 0 0 10px rgba(255, 69, 0, 0.8); /* Glowing text effect */
+#contact a:hover {
+  color: #ff4500;
+  text-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
 }
 
-/* Footer Styling */
+/* Footer */
 footer {
   background: rgba(0, 0, 0, 0.8);
-  padding: 1em 0;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
-  color: #e0e0e0;
+  padding: 1rem;
+  text-align: center;
+  color: #ff1493;
+  text-shadow: 0 0 10px #ff1493;
 }
 
-/* Footer Text */
-footer p {
-  margin: 0;
-  color: #ff1493; /* Neon pink color */
-  text-shadow: 0 0 10px #ff1493; /* Glowing text effect */
-}
-
-/* Media Queries for Responsiveness */
+/* Responsive Design */
 @media (max-width: 768px) {
   .header-content {
-      flex-direction: column;
-      align-items: center;
-      padding: 0 10px; /* Adjust padding for smaller screens */
+    flex-direction: column;
+    text-align: center;
   }
 
   .profile-pic {
-      margin: 0 auto 20px;
+    margin: 0 auto 1rem;
   }
 
   nav ul {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  nav ul li {
-      margin: 10px 0;
-  }
-
-  header h1 {
-      font-size: 2em;
-  }
-
-  section {
-      padding: 1em;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   section h2 {
-      font-size: 1.5em;
+    font-size: 1.8rem;
   }
 }
 
 @media (max-width: 480px) {
   header h1 {
-      font-size: 1.5em;
+    font-size: 1.8rem;
   }
 
   .profile-pic {
-      width: 80px;
-      height: 80px;
-  }
-
-  nav ul li {
-      margin: 5px 0;
+    width: 80px;
+    height: 80px;
   }
 }
