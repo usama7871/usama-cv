@@ -3,113 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usama's CV</title>
+    <title>Usama Abdullah - Futuristic CV</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-            <h1>Usama's CV</h1>
-            <nav>
+    <!-- 3D Canvas for Particle Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="profile.jpg" alt="Usama Abdullah" class="profile-pic">
+                <h1>Usama Abdullah</h1>
+                <p class="tagline">MBBS Student & AI Innovator</p>
+            </div>
+            <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about" class="nav-link" aria-current="page">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-        </div>
-    </header>
-    
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm Usama, a third-year MBBS student with a passion for software development. I'm transitioning from a medical career to focus on AI, machine learning, and technological advancements in medicine. I aim to develop innovative AI-driven solutions to advance healthcare. I'm proficient in Python, TypeScript, and various web and app development technologies, and I'm currently expanding my knowledge in Kubernetes, 3D modeling, and machine learning techniques.</p>
-        </section>
-        
-        <section id="experience">
-            <h2>Experience</h2>
-            <ul>
-                <li>
-                    <h3>Software Development Intern</h3>
-                    <p><strong>Tech Solutions Ltd. - June 2023 to August 2023</strong></p>
-                    <p>Assisted in developing web applications using Python and JavaScript, collaborated with cross-functional teams to design AI models for healthcare solutions, and contributed to code reviews and debugging processes.</p>
-                </li>
-                <!-- Add more experience as needed -->
-            </ul>
-        </section>
-        
-        <section id="education">
-            <h2>Education</h2>
-            <ul>
-                <li>
-                    <h3>Intermediate</h3>
-                    <p>City Public School, Karachi - 2019</p>
-                </li>
-                <li>
-                    <h3>MBBS</h3>
-                    <p>Al-Tibri Medical College, Karachi - 2022-2026</p>
-                    <p>Status: 3rd year</p>
-                </li>
-                <li>
-                    <h3>Generative AI, Web 3.0, and Metaverse</h3>
-                    <p>Status: Ongoing, 1-year program by Governor Sindh</p>
-                </li>
-                <li>
-                    <h3>Certified Cloud Engineer</h3>
-                    <p>Status: Ongoing, Google</p>
-                </li>
-                <!-- Add more education as needed -->
-            </ul>
-        </section>
-        
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Programming Languages: Python, TypeScript</li>
-                <li>Web Development: HTML, CSS, JavaScript</li>
-                <li>AI/ML: TensorFlow, PyTorch</li>
-                <li>Tools: Kubernetes, Docker, Git</li>
-                <!-- Add more skills as needed -->
-            </ul>
-        </section>
+            <button class="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
+        </aside>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li>
-                    <h3>Hackathon Project in Governor's IT Program</h3>
-                    <p>Developed an e-commerce platform during the Governor's IT Program hackathon, focusing on user-friendly design and seamless shopping experience.</p>
-                    <p><strong>Live Demo:</strong> <a href="https://hackathon-2-nu-ten.vercel.app" target="_blank">https://hackathon-2-nu-ten.vercel.app</a></p>
-                    <p><em>Status: Currently in production.</em></p>
-                </li>
-                <li>
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1 class="sr-only">Usama Abdullah's Curriculum Vitae</h1>
+                <button class="download-btn">Download CV</button>
+            </header>
+
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2>About Me</h2>
+                <p>Hello! I'm Usama, a third-year MBBS student at Al-Tibri Medical College with a passion for AI and software development. I'm transitioning to focus on machine learning and technological advancements in medicine, aiming to create AI-driven healthcare solutions. Proficient in Python, TypeScript, and web/app development, I'm expanding my expertise in Kubernetes, 3D modeling, and advanced ML techniques.</p>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section">
+                <h2>Professional Experience</h2>
+                <div class="experience-item">
+                    <h3>Software Development Intern</h3>
+                    <p class="meta">Tech Solutions Ltd. | June 2023 – August 2023</p>
+                    <ul>
+                        <li>Developed web applications using Python and JavaScript, enhancing UI/UX.</li>
+                        <li>Collaborated on AI models for healthcare solutions.</li>
+                        <li>Contributed to code reviews and debugging, improving performance.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>MBBS</h3>
+                    <p class="meta">Al-Tibri Medical College, Karachi | 2022 – 2026 | 3rd Year</p>
+                </div>
+                <div class="education-item">
+                    <h3>Intermediate</h3>
+                    <p class="meta">City Public School, Karachi | 2019</p>
+                </div>
+                <div class="education-item">
+                    <h3>Generative AI, Web 3.0, and Metaverse</h3>
+                    <p class="meta">Governor Sindh Initiative | Ongoing, 1-Year Program</p>
+                </div>
+                <div class="education-item">
+                    <h3>Certified Cloud Engineer</h3>
+                    <p class="meta">Google | Ongoing</p>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <ul>
+                            <li>Python</li>
+                            <li>TypeScript</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Web Development</h4>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>React</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>AI & Machine Learning</h4>
+                        <ul>
+                            <li>TensorFlow</li>
+                            <li>PyTorch</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Tools & Platforms</h4>
+                        <ul>
+                            <li>Kubernetes</li>
+                            <li>Docker</li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2>Projects</h2>
+                <div class="project-item">
+                    <h3>Hackathon Project – E-Commerce Platform</h3>
+                    <p class="meta">Governor's IT Program Hackathon | In Production</p>
+                    <p>Developed a user-friendly e-commerce platform with responsive design.</p>
+                    <a href="https://hackathon-2-nu-ten.vercel.app" target="_blank" class="project-link">Live Demo</a>
+                </div>
+                <div class="project-item">
                     <h3>Inventory Management System (IMS)</h3>
-                    <p>Created a comprehensive IMS to streamline inventory tracking and management for businesses, featuring real-time updates and analytics.</p>
-                    <p><strong>Live Demo:</strong> <a href="https://usama-apps.vercel.app" target="_blank">https://usama-apps.vercel.app</a></p>
-                    <p><em>Status: Currently in production.</em></p>
-                </li>
-                <!-- Add more projects as needed -->
-            </ul>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p><strong>Email:</strong> <a href="mailto:kusamakhan1234@gmail.com">kusamakhan1234@gmail.com</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/usama-abdullah-91b693201/" target="_blank">linkedin.com/in/usama-abdullah</a></p>
-            <p><strong>GitHub:</strong> <a href="https://www.github.com/usama7871" target="_blank">github.com/usama7871</a></p>
-            <p><strong>WhatsApp:</strong> 03052150446</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Usama's CV</p>
+                    <p class="meta">Personal Project | In Production</p>
+                    <p>Built an IMS with real-time tracking and analytics dashboards.</p>
+                    <a href="https://usama-apps.vercel.app" target="_blank" class="project-link">Live Demo</a>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2>Contact Information</h2>
+                <ul class="contact-list">
+                    <li>Email: <a href="mailto:[email protected]">[email protected]</a></li>
+                    <li>LinkedIn: <a href="https://linkedin.com/in/usama-abdullah" target="_blank">linkedin.com/in/usama-abdullah</a></li>
+                    <li>GitHub: <a href="https://github.com/usama7871" target="_blank">github.com/usama7871</a></li>
+                    <li>WhatsApp: <a href="https://wa.me/+923052150446">+92 305 2150446</a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Usama Abdullah. All rights reserved.</p>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
