@@ -1,0 +1,26 @@
+# Robots.txt for Usama's CV Website
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /style.css
+Allow: /script.js
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.github/
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://usama7871.github.io/usama-cv/sitemap.xml
+
+# Crawl delay (in seconds) - be nice to servers
+Crawl-delay: 1
+Request-rate: 1/1s
