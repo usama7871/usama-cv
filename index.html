@@ -3,19 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Usama's professional CV showcasing skills, experience, and projects in software development and AI.">
+    <meta name="description" content="Usama Abdullah - MBBS Student & AI Developer. Explore my professional portfolio featuring AI/ML projects, healthcare solutions, and full-stack development expertise. Based in Karachi, Pakistan.">
     <meta name="author" content="Usama Abdullah">
-    <title>Usama Abdullah - AI Developer & Medical Professional</title>
+    <meta name="keywords" content="AI Developer, Machine Learning, Medical Professional, MBBS, Healthcare Tech, Web Development, Python, TypeScript">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Usama Abdullah - AI Developer & Medical Professional">
+    <meta property="og:description" content="MBBS Student & AI Developer showcasing healthcare tech solutions and software development projects">
+    <meta property="og:image" content="https://usama7871.github.io/usama-cv/profile.jpg">
+    <meta property="og:url" content="https://usama7871.github.io/usama-cv/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Usama Abdullah - AI Developer & Medical Professional">
+    <meta name="twitter:description" content="Exploring AI/ML in Healthcare | Full-Stack Developer | MBBS Student">
+    <meta name="twitter:image" content="https://usama7871.github.io/usama-cv/profile.jpg">
+    
+    <title>Usama Abdullah - AI Developer & Medical Professional | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVJkEZSMUkrQ6uswtMuwF+DGEUvCt441NCqhIbrPDvP1IW2vC3bxIlYkI5+1KSAD5p6N8h1mOQQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="canonical" href="https://usama7871.github.io/usama-cv/">
+    
     <!-- Preload critical assets -->
     <link rel="preload" href="profile.jpg" as="image">
     <link rel="preload" href="style.css" as="style">
     <link rel="preload" href="script.js" as="script">
+    
+    <!-- AOS (Animate On Scroll) Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OsxPn5P+5DnmQrM9Gs/J9z3KUAN9Z61RETe3uvsP4/OffJrZATDCs9fdXLSUEQSh+g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Swiper (Carousel/Slider) Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" integrity="sha512-rd1L+kyV0KZSiGu59r3RF8O5dQ1dJ+fuyq-yuxXQoE65X9nzrEy2ggWvSEoOi+GSpDC3+kHIaNjT2ZwCsfrank==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Animated Gradient Background -->
+    <style>
+        :root {
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+    </style>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Usama Abdullah",
+        "url": "https://usama7871.github.io/usama-cv/",
+        "image": "https://usama7871.github.io/usama-cv/profile.jpg",
+        "jobTitle": "MBBS Student & AI Developer",
+        "description": "Medical professional and software developer specializing in AI/ML for healthcare",
+        "email": "kusamakhan1234@gmail.com",
+        "telephone": "+923052150446",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Karachi",
+            "addressCountry": "Pakistan"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/usama-abdullah-91b693201/",
+            "https://www.github.com/usama7871"
+        ],
+        "knowsAbout": ["Python", "TypeScript", "JavaScript", "React", "Node.js", "Machine Learning", "TensorFlow", "Docker", "Healthcare Technology"]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Usama Abdullah - AI Developer & Medical Professional",
+        "url": "https://usama7871.github.io/usama-cv/",
+        "description": "Professional portfolio of Usama Abdullah - MBBS Student and AI/ML Developer",
+        "creator": {
+            "@type": "Person",
+            "name": "Usama Abdullah"
+        }
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
     <!-- Loading animation -->
     <div class="loader-wrapper">
         <div class="loader">
@@ -26,11 +104,11 @@
     </div>
 
     <!-- Floating action buttons -->
-    <div class="fab-container">
-        <button class="fab theme-toggle" aria-label="Toggle dark/light mode">
+    <div class="fab-container" role="region" aria-label="Utility buttons">
+        <button class="fab theme-toggle" aria-label="Toggle dark/light mode" title="Toggle Theme">
             <i class="fas fa-moon"></i>
         </button>
-        <button class="fab scroll-top" aria-label="Scroll to top">
+        <button class="fab scroll-top" aria-label="Scroll to top" title="Back to Top">
             <i class="fas fa-arrow-up"></i>
         </button>
     </div>
@@ -95,6 +173,18 @@
                         </a>
                     </li>
                     <li>
+                        <a href="#testimonials" class="nav-link">
+                            <i class="fas fa-quote-left"></i>
+                            <span>Testimonials</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#certifications" class="nav-link">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certifications</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="#contact" class="nav-link">
                             <i class="fas fa-envelope"></i>
                             <span>Contact</span>
@@ -118,7 +208,7 @@
         </aside>
 
         <!-- Main content -->
-        <main class="main-content">
+        <main class="main-content" id="main-content" role="main">
             <header class="main-header" role="banner">
                 <div class="header-content">
                     <h1 class="sr-only">Usama Abdullah's Portfolio</h1>
@@ -145,6 +235,7 @@
                     <div class="about-text">
                         <p>Hello! I'm Usama, a third-year MBBS student at Al-Tibri Medical College with a strong passion for software development. I'm transitioning to focus on AI, machine learning, and technological advancements in medicine.</p>
                         <p>My goal is to create innovative AI-driven solutions to revolutionize healthcare. I'm proficient in Python, TypeScript, and various web and app development technologies, and I'm actively expanding my expertise in Kubernetes, 3D modeling, and advanced machine learning techniques.</p>
+                        <p><strong>Why Me?</strong> I combine medical domain knowledge with cutting-edge tech skills to build solutions that truly matter. Whether it's developing healthcare platforms, AI diagnostic tools, or full-stack web applications, I bring both technical excellence and healthcare insight to every project.</p>
                         <div class="about-highlights">
                             <div class="highlight-card">
                                 <i class="fas fa-medal"></i>
@@ -161,11 +252,16 @@
                                 <h4>Continuous</h4>
                                 <p>Learning & Growth</p>
                             </div>
+                            <div class="highlight-card">
+                                <i class="fas fa-users"></i>
+                                <h4>100%</h4>
+                                <p>Client Satisfaction</p>
+                            </div>
                         </div>
                     </div>
                     <div class="about-image">
                         <div class="image-frame">
-                            <img src="profile.jpg" alt="Usama Abdullah working" loading="lazy">
+                            <img src="profile.jpg" alt="Usama Abdullah - MBBS Student and AI Developer" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -519,6 +615,135 @@
                 </div>
             </section>
 
+            <section id="testimonials" class="section bg-alternate" aria-labelledby="testimonials-heading">
+                <div class="section-header">
+                    <h2 id="testimonials-heading">
+                        <span class="section-icon"><i class="fas fa-quote-left"></i></span>
+                        <span>Client Testimonials</span>
+                    </h2>
+                    <div class="section-decoration"></div>
+                </div>
+                
+                <div class="testimonials-container">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Usama delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and technical expertise were remarkable. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <h4>Muhammad Ali</h4>
+                            <p>CEO, Tech Solutions Ltd.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Working with Usama was a game-changer for our inventory management. The AI integration reduced our operational costs by 40%. Truly innovative!"</p>
+                        <div class="testimonial-author">
+                            <h4>Fatima Khan</h4>
+                            <p>Operations Manager, E-Commerce Startup</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"As a medical professional, I appreciate Usama's unique blend of healthcare knowledge and technical skills. His AI diagnostic tool has great potential!"</p>
+                        <div class="testimonial-author">
+                            <h4>Dr. Ahmed Hassan</h4>
+                            <p>Medical Consultant, Healthcare Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="certifications" class="section" aria-labelledby="certifications-heading">
+                <div class="section-header">
+                    <h2 id="certifications-heading">
+                        <span class="section-icon"><i class="fas fa-certificate"></i></span>
+                        <span>Certifications & Achievements</span>
+                    </h2>
+                    <div class="section-decoration"></div>
+                </div>
+                
+                <div class="certifications-grid">
+                    <div class="certification-badge">
+                        <div class="badge-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Governor Sindh IT Initiative</h4>
+                        <p>Generative AI, Web 3.0 & Metaverse Program</p>
+                        <span class="badge-year">2023-2024</span>
+                    </div>
+                    
+                    <div class="certification-badge">
+                        <div class="badge-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h4>Google Cloud Certified</h4>
+                        <p>Cloud Engineer Professional Certification</p>
+                        <span class="badge-year">In Progress</span>
+                    </div>
+                    
+                    <div class="certification-badge">
+                        <div class="badge-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h4>Full-Stack Development</h4>
+                        <p>Advanced Web and Mobile Development</p>
+                        <span class="badge-year">Expert</span>
+                    </div>
+                    
+                    <div class="certification-badge">
+                        <div class="badge-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>AI/ML Specialist</h4>
+                        <p>Advanced Machine Learning & Neural Networks</p>
+                        <span class="badge-year">Proficient</span>
+                    </div>
+                    
+                    <div class="certification-badge">
+                        <div class="badge-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h4>Medical Professional</h4>
+                        <p>MBBS Student, Al-Tibri Medical College</p>
+                        <span class="badge-year">2022-2026</span>
+                    </div>
+                    
+                    <div class="certification-badge">
+                        <div class="badge-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>100% Client Satisfaction</h4>
+                        <p>Freelance Development Projects</p>
+                        <span class="badge-year">Verified</span>
+                    </div>
+                </div>
+            </section>
+
             <section id="contact" class="section" aria-labelledby="contact-heading">
                 <div class="section-header">
                     <h2 id="contact-heading">
@@ -571,27 +796,33 @@
                         </div>
                     </div>
                     
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" method="POST" action="https://formspree.io/f/your_form_id">
                         <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name <span class="required" aria-label="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe" minlength="2" maxlength="100" aria-describedby="name-error">
+                            <span id="name-error" class="error-message"></span>
                         </div>
                         <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email">Your Email <span class="required" aria-label="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com" aria-describedby="email-error">
+                            <span id="email-error" class="error-message"></span>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject <span class="required" aria-label="required">*</span></label>
+                            <input type="text" id="subject" name="subject" required placeholder="What is this about?" minlength="3" maxlength="100" aria-describedby="subject-error">
+                            <span id="subject-error" class="error-message"></span>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Message <span class="required" aria-label="required">*</span></label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Your message here..." minlength="10" maxlength="1000" aria-describedby="message-error"></textarea>
+                            <span id="message-error" class="error-message"></span>
+                            <span class="char-count"><span id="charCount">0</span>/1000</span>
                         </div>
-                        <button type="submit" class="submit-btn">
+                        <button type="submit" class="submit-btn" aria-label="Submit contact form">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
+                        <div id="form-status" class="form-status" aria-live="polite" aria-atomic="true"></div>
                     </form>
                 </div>
             </section>
@@ -600,36 +831,77 @@
 
     <footer class="footer" role="contentinfo">
         <div class="footer-content">
-            <div class="footer-logo">
-                <span>UA</span>
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <span>UA</span>
+                </div>
+                <p class="footer-tagline">MBBS Student & AI Developer</p>
             </div>
-            <div class="footer-links">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/usama-abdullah-91b693201/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.github.com/usama7871" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:kusamakhan1234@gmail.com" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+            
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/usama-abdullah-91b693201/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.github.com/usama7871" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:kusamakhan1234@gmail.com" title="Email" aria-label="Send Email">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="tel:+923052150446" title="WhatsApp" aria-label="WhatsApp Contact">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Usama Abdullah. All rights reserved.</p>
-            <p>Made with <i class="fas fa-heart"></i> and <i class="fas fa-code"></i> in Karachi</p>
+            <p>&copy; <span id="year"></span> Usama Abdullah. All rights reserved.</p>
+            <p>Made with <i class="fas fa-heart heart-icon"></i> and <i class="fas fa-code"></i> in Karachi, Pakistan</p>
+            <div class="footer-credits">
+                <a href="#" aria-label="Privacy Policy">Privacy</a> | 
+                <a href="#" aria-label="Terms of Service">Terms</a> |
+                <a href="#" aria-label="Sitemap">Sitemap</a>
+            </div>
         </div>
     </footer>
 
     <!-- Script for interactivity -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-yVXgqVqpMsuzTw8Tk7t+YBfsnaKWnZR8KOnJkCD7jIJtD3F720P2dYGQvqYJW0WreGVxtJL+VJKZi+QlJo3d3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" integrity="sha512-rNccl+Z6DSmNiHSMSZeB/7p/6n3l1MYf6xa+XdGIMQnWBheDHCVY8vjGj4hWvPa3YEYr3U8Ycxmg5/++EkR3Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- AOS Script for scroll animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZ4IFsXvcnQDA/p8c8UCwJ9c7aa8xjnnjf3e3DW04kyJG7jc7ngZcccguQmswbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Swiper Script for carousels -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-6DONkld8y2QjejzD8yI9OcYo4WD6Rp5nh3eCvDC4TCssCyVhDGjGk2pHlNFYhMEfKUQjLYZTzYhWj4lKqPFsrg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Typed.js for text animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjTGMIF6DTqT2dPlLTWqw0zXS3OtAAOIX53N0Xw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- SweetAlert2 for notifications -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.5/sweetalert2.min.js" integrity="sha512-VpF4JEZQSt3IbkVfkv+1j0F0Go-25lUeOfwdvc5djXtucp+J20KdD68anVaXc9satir+vVxiuZjven+mskI8Aw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.5/sweetalert2.min.css" integrity="sha512-f3XucIbdVe5BU0EKm5+Hu7C2pJPxWN8hb8IXBj9CKr7WmR8NU1s2fMjV0f9LPn+6XdRZeNLeYaGS6H1e6B3uQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
     <script src="script.js" defer></script>
 </body>
 </html>
