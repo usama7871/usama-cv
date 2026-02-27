@@ -184,81 +184,55 @@ function handleDownload() {
 }
 
 function generatePDF() {
-    const doc = new jsPDF();
-    const pageHeight = doc.internal.pageSize.getHeight();
-    const pageWidth = doc.internal.pageSize.getWidth();
-    let yPosition = 20;
-    
-    // Helper function
-    const addSection = (title, content) => {
-        if (yPosition > pageHeight - 30) {
-            doc.addPage();
-            yPosition = 20;
+    try {
+        // Get the main content to export
+        const element = document.querySelector('.main-content');
+        
+        if (!element) {
+            showNotification('Could not find CV content to download', 'error');
+            return;
         }
-        doc.setFontSize(16);
-        doc.setTextColor(33, 150, 243);
-        doc.text(title, pageWidth / 2, yPosition, { align: 'center' });
-        yPosition += 10;
-        return yPosition;
-    };
-    
-    // Title
-    doc.setFontSize(24);
-    doc.setTextColor(25, 103, 210);
-    doc.text('USAMA ABDULLAH', pageWidth / 2, 15, { align: 'center' });
-    
-    doc.setFontSize(10);
-    doc.setTextColor(100);
-    doc.text('MBBS Student & AI Developer | Karachi, Pakistan', pageWidth / 2, 22, { align: 'center' });
-    
-    // Contact info
-    yPosition = 32;
-    doc.setFontSize(9);
-    doc.setTextColor(50);
-    doc.text('📧 kusamakhan1234@gmail.com | 💼 linkedin.com/in/usama-abdullah | 🐙 github.com/usama7871', 20, yPosition);
-    
-    yPosition += 12;
-    doc.setDrawColor(33, 150, 243);
-    doc.line(20, yPosition, pageWidth - 20, yPosition);
-    
-    // About section
-    yPosition += 10;
-    addSection('ABOUT', '');
-    doc.setFontSize(10);
-    doc.setTextColor(0);
-    const aboutText = doc.splitTextToSize('Third-year MBBS student with 5+ years of coding experience. Specializing in AI/ML solutions for healthcare with expertise in Python, TypeScript, React, and full-stack development.', pageWidth - 40);
-    doc.text(aboutText, 20, yPosition);
-    yPosition += aboutText.length * 5 + 5;
-    
-    // Experience
-    yPosition += 5;
-    addSection('PROFESSIONAL EXPERIENCE', '');
-    doc.setFontSize(10);
-    doc.setLineWidth(0.1);
-    doc.text('Software Development Intern | Tech Solutions Ltd. (June 2023 - Aug 2023)', 20, yPosition);
-    yPosition += 7;
-    doc.setFontSize(9);
-    doc.text('• Developed web applications with React and Python (15% diagnostic accuracy improvement)', 25, yPosition);
-    doc.text('• Delivered features 20% faster using agile methodologies', 25, yPosition + 5);
-    yPosition += 15;
-    
-    doc.text('Freelance Developer | Self-Employed (Jan 2022 - Present)', 20, yPosition);
-    yPosition += 7;
-    doc.setFontSize(9);
-    doc.text('• Deployed 10+ web applications across healthcare, e-commerce, and education sectors', 25, yPosition);
-    doc.text('• 100% client satisfaction rate with responsive support and iterative improvements', 25, yPosition + 5);
-    yPosition += 15;
-    
-    // Skills
-    yPosition += 5;
-    addSection('TECHNICAL SKILLS', '');
-    doc.setFontSize(9);
-    const skills = 'Languages: Python, TypeScript, JavaScript | Web: React, Node.js, HTML5/CSS3 | AI/ML: TensorFlow, PyTorch, NLP | Tools: Docker, Kubernetes, Git';
-    const skillsText = doc.splitTextToSize(skills, pageWidth - 40);
-    doc.text(skillsText, 20, yPosition);
-    
-    doc.save('Usama-Abdullah-CV.pdf');
+
+        // Clone the element to avoid modifying original
+        const clone = element.cloneNode(true);
+        
+        // Remove elements that shouldn't be in PDF
+        const elementsToRemove = clone.querySelectorAll(
+            '.fab-container, .scroll-top, .sidebar-toggle, .header-actions, ' +
+            '.sidebar-toggle-mobile, .theme-toggle, .theme-toggle-mobile, ' +
+            '.contact-form'
+        );
+        elementsToRemove.forEach(el => el.remove());
+
+        // Configure html2pdf options
+        const options = {
+            margin: [10, 10, 10, 10],
+            filename: 'Usama_Abdullah_CV.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true },
+            jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+        };
+
+        // Generate PDF and download
+        html2pdf()
+            .set(options)
+            .from(clone)
+            .save()
+            .then(() => {
+                showNotification('✅ CV downloaded successfully!', 'success');
+            })
+            .catch((error) => {
+                console.error('PDF generation error:', error);
+                showNotification('Failed to generate PDF. Trying alternative method...', 'warning');
+                handleDownloadFallback();
+            });
+
+    } catch (error) {
+        console.error('PDF download error:', error);
+        handleDownloadFallback();
+    }
 }
+
 
 function handleDownloadFallback() {
     downloadBtn.innerHTML = '<i class="fas fa-file-pdf"></i><span>Print as PDF</span>';
