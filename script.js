@@ -235,10 +235,24 @@ function generatePDF() {
 
 
 function handleDownloadFallback() {
-    downloadBtn.innerHTML = '<i class="fas fa-file-pdf"></i><span>Print as PDF</span>';
-    setTimeout(() => {
-        window.print();
-    }, 500);
+    // if PDF generation fails, fall back to static file download
+    window.location.href = '/Usama_Abdullah_CV.pdf';
+}
+
+// register service worker for offline capabilities
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(reg => {
+                console.log('Service Worker registered:', reg.scope);
+                // let user know offline support is available
+                showNotification('App ready for offline use 👌', 'success');
+            })
+            .catch(err => {
+                console.error('Service Worker registration failed:', err);
+                showNotification('Offline support unavailable', 'error');
+            });
+    });
 }
 
 // ============================================

@@ -33,6 +33,8 @@
 - ✅ Open Graph & Twitter Card support
 - ✅ Mobile-friendly meta viewport
 - ✅ Canonical URL tags
+- ✅ Offline page (`offline.html`) served by service worker
+- ✅ Static CV PDF download with dynamic generation fallback
 
 ### ♿ Accessibility
 - ✅ WCAG 2.1 Level AA compliant
@@ -42,6 +44,11 @@
 - ✅ Keyboard navigation support
 - ✅ Focus management
 - ✅ Color contrast compliance
+
+### 🗂 Offline & Download Options
+- ✅ Service worker registered for offline use
+- ✅ `offline.html` cached and displayed when network unavailable
+- ✅ CV download button now uses pre-generated `Usama_Abdullah_CV.pdf` with HTML-to-PDF fallback
 
 ### ⚡ Performance
 - ✅ Lazy loading for images
@@ -175,7 +182,17 @@ Edit `index.html` projects section:
 </div>
 ```
 
-### 5. **Modify Animations**
+### 5. **Update CV PDF**
+The download button in the sidebar uses a static file at
+`/Usama_Abdullah_CV.pdf` to ensure reliable, fast downloads. You can
+replace this file with your own resume PDF (keep the same filename or
+update the path in `script.js` under `handleDownloadFallback`).
+
+The site also attempts to generate the PDF dynamically using
+`html2pdf.js`; this script runs when the user clicks the button and if it
+fails the static file is served automatically.
+
+### 6. **Modify Animations**
 Edit animations in `script.js`:
 ```javascript
 gsap.from('.element', {

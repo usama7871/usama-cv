@@ -5,6 +5,7 @@ const CACHE_NAME = 'usama-cv-v1';
 const urlsToCache = [
     '/',
     '/index.html',
+    '/offline.html',
     '/style.css',
     '/script.js',
     '/manifest.json',
@@ -75,10 +76,8 @@ self.addEventListener('fetch', event => {
                 });
             })
             .catch(() => {
-                // Offline fallback
-                // You can serve a custom offline page here
-                // return caches.match('/offline.html');
-                console.log('Service Worker: Offline mode');
+                // Offline fallback - serve offline page
+                return caches.match('/offline.html');
             })
     );
 });
