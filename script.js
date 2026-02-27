@@ -219,13 +219,13 @@ function generatePDF() {
             .from(clone)
             .save()
             .then(() => {
-                showNotification('✅ CV downloaded successfully!', 'success');
+                showNotification('✅ CV downloaded as PDF!', 'success');
             })
             .catch((error) => {
                 console.error('PDF generation error:', error);
-                showNotification('Failed to generate PDF. Trying alternative method...', 'warning');
+                showNotification('Using static PDF backup...', 'warning');
                 handleDownloadFallback();
-            });
+            });}
 
     } catch (error) {
         console.error('PDF download error:', error);
@@ -235,8 +235,27 @@ function generatePDF() {
 
 
 function handleDownloadFallback() {
-    // if PDF generation fails, fall back to static file download
-    window.location.href = '/Usama_Abdullah_CV.pdf';
+    // if PDF generation fails, download static file as blob
+    fetch('/Usama_Abdullah_CV.pdf')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.blob();
+        })
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Usama_Abdullah_CV.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+            showNotification('✅ CV downloaded as PDF!', 'success');
+        })
+        .catch(error => {
+            console.error('PDF download failed:', error);
+            showNotification('Could not download CV. Please try again.', 'error');
+        });
 }
 
 // register service worker for offline capabilities
