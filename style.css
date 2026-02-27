@@ -57,25 +57,31 @@
 }
 
 [data-theme="light"] {
-    --primary: #0288d1;
-    --primary-dark: #01579b;
-    --primary-light: #4fc3f7;
-    --secondary: #7c3aed;
-    --accent: #d81b60;
-    --text: #1e1e1e;
-    --text-secondary: #424242;
-    --text-tertiary: #757575;
-    --bg-dark: #f8fafc;
-    --bg-darker: #f1f5f9;
-    --bg-card: rgba(241, 245, 249, 0.9);
-    --bg-light: rgba(241, 245, 249, 0.6);
-    --bg-glass: rgba(255, 255, 255, 0.8);
-    --border: rgba(2, 136, 209, 0.3);
-    --border-light: rgba(2, 136, 209, 0.15);
-    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.12);
-    --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.15);
-    --shadow-lg: 0 15px 40px rgba(15, 23, 42, 0.20);
-    --shadow-xl: 0 20px 60px rgba(15, 23, 42, 0.25);
+    --primary: #0066cc;
+    --primary-dark: #0052a3;
+    --primary-light: #0088ff;
+    --secondary: #6d28d9;
+    --secondary-light: #8b5cf6;
+    --accent: #c2185b;
+    --accent-light: #e91e63;
+    --text: #0f172a;
+    --text-secondary: #334155;
+    --text-tertiary: #64748b;
+    --bg-dark: #f0f9ff;
+    --bg-darker: #e0f2fe;
+    --bg-card: rgba(255, 255, 255, 0.95);
+    --bg-light: rgba(255, 255, 255, 0.7);
+    --bg-glass: rgba(255, 255, 255, 0.9);
+    --border: rgba(2, 132, 199, 0.4);
+    --border-light: rgba(2, 132, 199, 0.2);
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.15);
+    --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.18);
+    --shadow-lg: 0 15px 40px rgba(15, 23, 42, 0.22);
+    --shadow-xl: 0 20px 60px rgba(15, 23, 42, 0.28);
+    --success: #059669;
+    --success-dark: #047857;
+    --warning: #d97706;
+    --error: #dc2626;
 }
 
 /* ============================================
@@ -314,7 +320,7 @@ a:hover {
 
 .sidebar {
     width: 340px;
-    background: rgba(5, 15, 26, 0.9);
+    background: rgba(5, 15, 26, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 2.5rem 1.5rem;
@@ -328,6 +334,14 @@ a:hover {
     overflow-y: auto;
     overflow-x: hidden;
     box-shadow: inset 0 0 50px rgba(0, 212, 255, 0.05);
+    left: 0;
+    top: 0;
+}
+
+[data-theme="light"] .sidebar {
+    background: rgba(255, 255, 255, 0.97);
+    border-right: 1px solid rgba(0, 102, 204, 0.2);
+    box-shadow: inset 0 0 50px rgba(0, 102, 204, 0.03), -8px 0 24px rgba(0, 102, 204, 0.08);
 }
 
 .sidebar::before {
@@ -539,7 +553,7 @@ a:hover {
     width: 100%;
     background: var(--gradient-primary);
     border: none;
-    color: white;
+    color: #ffffff;
     padding: 1.1rem;
     border-radius: 12px;
     font-size: 1rem;
@@ -549,6 +563,16 @@ a:hover {
     box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
     position: relative;
     overflow: hidden;
+}
+
+[data-theme="light"] .download-btn {
+    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.25);
+    color: #ffffff;
+}
+
+[data-theme="light"] .download-btn:hover {
+    box-shadow: 0 12px 30px rgba(0, 102, 204, 0.4);
 }
 
 .download-btn::before {
@@ -593,6 +617,10 @@ a:hover {
     padding: 0;
 }
 
+[data-theme="light"] .sidebar-toggle {
+    color: #0066cc;
+}
+
 .toggle-line {
     display: block;
     width: 100%;
@@ -600,6 +628,10 @@ a:hover {
     background: var(--primary-light);
     border-radius: 3px;
     transition: var(--transition-base);
+}
+
+[data-theme="light"] .toggle-line {
+    background: #0066cc;
 }
 
 .sidebar-toggle.active .toggle-line:nth-child(1) {
@@ -622,12 +654,16 @@ a:hover {
     margin-left: 340px;
     padding: 4rem 3rem;
     width: calc(100% - 340px);
-    background: 
-        linear-gradient(135deg, rgba(10, 26, 47, 0.5) 0%, rgba(7, 17, 31, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(10, 26, 47, 0.5) 0%, rgba(7, 17, 31, 0.3) 100%);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     transition: var(--transition-base);
     position: relative;
+    min-height: 100vh;
+}
+
+[data-theme="light"] .main-content {
+    background: linear-gradient(135deg, rgba(240, 249, 255, 0.8) 0%, rgba(224, 242, 254, 0.6) 100%);
 }
 
 .main-content::before {
@@ -675,6 +711,17 @@ a:hover {
     overflow: hidden;
 }
 
+[data-theme="light"] .header-btn {
+    background: rgba(0, 102, 204, 0.08);
+    border: 1.5px solid rgba(0, 102, 204, 0.3);
+    color: #0066cc;
+}
+
+[data-theme="light"] .header-btn:hover {
+    background: rgba(0, 102, 204, 0.15);
+    border-color: rgba(0, 102, 204, 0.5);
+}
+
 .header-btn::before {
     content: '';
     position: absolute;
@@ -720,6 +767,12 @@ a:hover {
     box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.2),
         inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .section {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 102, 204, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 102, 204, 0.08), inset 0 1px 1px rgba(0, 102, 204, 0.05);
 }
 
 .section::before {
@@ -1746,7 +1799,7 @@ a:hover {
     width: 100%;
     background: var(--gradient-primary);
     border: none;
-    color: white;
+    color: #ffffff;
     padding: 1.2rem;
     border-radius: 12px;
     font-size: 1.05rem;
@@ -1758,6 +1811,16 @@ a:hover {
     overflow: hidden;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+}
+
+[data-theme="light"] .submit-btn {
+    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+    box-shadow: 0 10px 30px rgba(0, 102, 204, 0.25);
+    color: #ffffff;
+}
+
+[data-theme="light"] .submit-btn:hover {
+    box-shadow: 0 12px 35px rgba(0, 102, 204, 0.4);
 }
 
 .submit-btn::before {
@@ -1991,7 +2054,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #ffffff;
     font-size: 1.3rem;
     cursor: pointer;
     box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
@@ -1999,6 +2062,34 @@ a:hover {
     border: none;
     position: relative;
     overflow: hidden;
+}
+
+[data-theme="light"] .fab {
+    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+    box-shadow: 0 8px 25px rgba(0, 102, 204, 0.25);
+    color: #ffffff;
+}
+
+[data-theme="light"] .fab:hover {
+    box-shadow: 0 12px 35px rgba(0, 102, 204, 0.4);
+}
+
+[data-theme="light"] .fab-secondary {
+    background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%);
+    box-shadow: 0 8px 25px rgba(109, 40, 217, 0.25);
+}
+
+[data-theme="light"] .fab-secondary:hover {
+    box-shadow: 0 12px 35px rgba(109, 40, 217, 0.4);
+}
+
+[data-theme="light"] .fab-tertiary {
+    background: linear-gradient(135deg, #c2185b 0%, #e91e63 100%);
+    box-shadow: 0 8px 25px rgba(194, 24, 91, 0.25);
+}
+
+[data-theme="light"] .fab-tertiary:hover {
+    box-shadow: 0 12px 35px rgba(194, 24, 91, 0.4);
 }
 
 .fab::before {
@@ -2050,6 +2141,65 @@ a:hover {
 .scroll-to-top.visible {
     opacity: 1;
     pointer-events: all;
+}
+
+/* ============================================
+   LIGHT THEME ENHANCEMENTS
+   ============================================ */
+
+[data-theme="light"] .project-card,
+[data-theme="light"] .education-card,
+[data-theme="light"] .certification-badge,
+[data-theme="light"] .testimonial-card,
+[data-theme="light"] .contact-card,
+[data-theme="light"] .highlight-card,
+[data-theme="light"] .timeline-content {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 102, 204, 0.15);
+}
+
+[data-theme="light"] .sidebar h1 {
+    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+[data-theme="light"] a {
+    color: #0066cc;
+}
+
+[data-theme="light"] a:hover {
+    color: #0052a3;
+}
+
+[data-theme="light"] .nav-link {
+    color: var(--text);
+}
+
+[data-theme="light"] .nav-link:hover {
+    color: #0066cc;
+}
+
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1.5px solid rgba(0, 102, 204, 0.2);
+    color: var(--text);
+}
+
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group textarea:focus {
+    border-color: #0066cc;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+[data-theme="light"] .skill-progress {
+    background: rgba(0, 102, 204, 0.08);
+}
+
+[data-theme="light"] .progress {
+    background: rgba(0, 102, 204, 0.3);
 }
 
 /* ============================================
