@@ -225,7 +225,7 @@ function generatePDF() {
                 console.error('PDF generation error:', error);
                 showNotification('Using static PDF backup...', 'warning');
                 handleDownloadFallback();
-            });}
+            });
 
     } catch (error) {
         console.error('PDF download error:', error);
